@@ -1,0 +1,219 @@
+html { /*hide scroll wheel*/
+    overflow: scroll;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #655;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+/*------------------------Main Head----------------------*/
+.cover {
+    position: relative;
+    color: white;
+    font-size: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: overline underline;
+    margin-bottom: 100px;
+    margin-top: -50px;
+    padding-top: 0;
+}
+
+h4 span {
+    background-color:  #F276B0;
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.cover > img {
+    box-shadow: 0 0 20px #000;
+    border-radius: 50px;
+    margin-right: 20px;
+    width: 12vh;
+    height: 12vh;
+}
+
+/*-------------------------Nav Bar-----------------------*/
+.nav {
+    position: fixed; /*navigation always at top of screen*/
+    top: 0;
+    width: 100%;
+    background:#E3006B;
+    z-index: 100; /*keep it on top of everything else*/
+    height: 6vh; /*scale with window size*/
+    border-bottom-style: dashed;
+    border-bottom-width: 4px;
+    border-color: #FF7A00;
+}
+
+@media only screen and (max-height: 600px) { /*keep nav bar from shrinking too much*/
+    .nav {
+        height: 48px;
+    }
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding-top: 0;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+li {
+    padding: 20px;
+    padding-top: 10px;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 2px;
+    margin: 0;
+    border-style: double none double none;
+    border-color: rgba(255, 255, 255, 0);
+    border-width: thick;
+    transition: all 0.3s ease;
+}
+
+nav a:hover { /*increase text size when hovering*/
+    border-color:#FF7A00;
+}
+
+/*-------------------------Cover-------------------------*/
+.container {
+    height: 80vh; /*percent of viewport height*/
+    position: relative;
+    margin: 0;
+}
+
+.wrapper-all { /*aid in parallax, set perspective and hold page scale*/
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    perspective: 2px;
+}
+
+.parallax::after { /*where all the magic happens*/
+    content: ""; /*blank to mke stuff show up*/
+    position: absolute; /*lock at top of page*/
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-2px) scale(2.1); /*scale it so it displays properly*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /*make it the farthest object back*/
+    background-image: url("sctyroom.jpg");
+}
+/*--------------------------Grid-------------------------*/
+.mainBlock {
+    /* background-image: linear-gradient(rgba(0,0,0,0), rgba(var(--c1),var(--c2),var(--c3),1),  rgba(var(--c1),var(--c2),var(--c3),1),  rgba(var(--c1),var(--c2),var(--c3),1),  rgba(var(--c1),var(--c2),var(--c3),1),  rgba(var(--c1),var(--c2),var(--c3),1),  rgba(var(--c1),var(--c2),var(--c3),1), rgba(var(--c1),var(--c2),var(--c3),1)); excessive gradient to create background overlay */
+    background-color: #FFBB7D;
+    padding: 200px;
+    padding-bottom: 50px;
+    padding: 100px;
+}
+
+.textBlock {
+    background-color: #F276B0;
+    width: 50vw;
+    padding: 30px;
+    margin: 20px;
+    border-radius:20px;
+    transition: all 1s ease;
+    --notchSize: 80px;
+  /*cut the edges slightly to give the chipped look*/
+    clip-path:
+    polygon( 
+        0% var(--notchSize), 
+        var(--notchSize) 0%, 
+        calc(100% - var(--notchSize)) 0%, 
+        100% var(--notchSize), 
+        100% calc(100% - var(--notchSize)), 
+        calc(100% - var(--notchSize)) 100%, 
+        var(--notchSize) 100%, 
+        0% calc(100% - var(--notchSize))
+);
+}
+
+#slogan {
+    position: relative; 
+    margin-top: 50px; 
+    margin-bottom: 100px;
+    padding: 50px;
+    
+    font-size: 200%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#slogan .textBlock {
+    background-color: #B60056;
+    text-align: center;
+}
+
+.mainText {
+    padding: 100px;
+    padding-top: 50px;
+    background-color: #EC4A96;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#plat1 {
+    background-color: #EC4A96;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+#plat2 {
+    text-align: right;
+    background-color: #E72380;
+    clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+#plat3 {
+    background-color: #E3006B;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-items {
+        font-size: 2vw;
+        padding: 0;
+    }
+    .nav {
+        height: 48px;
+    }
+    .cover {
+        font-size: 3vh;
+        top: 10vh;
+    }
+    .mainBlock {
+        padding: 50px;
+        padding-top: 0;
+    }
+
+    .mainText {
+        padding: 30px;
+    }
+}
