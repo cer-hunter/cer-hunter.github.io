@@ -195,7 +195,26 @@ nav a:hover { /*increase text size when hovering*/
     background-color: #E3006B;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
-
+.thanks{
+    margin-top: -50px;
+    background-color:  #F276B0;
+    padding: 5%;
+    border-radius: 20px;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: #FF7A00;
+}
+.people {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0px;
+    padding-top: 0;
+    font-size: 4vh;
+    font-weight: bold;
+}
 @media only screen and (max-width: 600px) {
     .nav-items {
         font-size: 2vw;
